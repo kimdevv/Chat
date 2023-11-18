@@ -1,13 +1,12 @@
 /*
 
     Socket을 이용한 채팅 클라이언트 UI
-    2023. 10. 29. Sun
+    2023. 10. 29. Sun ~
 
  */
 
-// -*- coding: utf-8 -*-
-
 import javax.swing.*;
+import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -246,9 +245,14 @@ class Chat_UI extends JFrame implements ActionListener { // 채팅 UI
 
         textArea = new JTextArea(20, 40); // 20행, 40열 크기의 JTextArea 생성
         textArea.setEditable(false);
-        //JScrollPane scrollPane = new JScrollPane(textArea); // JTextArea를 스크롤 가능하도록 설정
-        //add(scrollPane, BorderLayout.CENTER); // JScrollPane를 프레임에 추가
-        add(textArea, BorderLayout.CENTER); // textArea를 프레임에 추가
+
+        // JScrollPane 추가
+        JScrollPane scrollPane = new JScrollPane(textArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        add(scrollPane);
+
+        // 스크롤바를 항상 아래로 유지
+        DefaultCaret caret = (DefaultCaret)textArea.getCaret();
+        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 
         textField = new JTextField(30);
         textField.addActionListener(this);
