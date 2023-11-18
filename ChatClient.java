@@ -1,19 +1,13 @@
 /*
 
     Socket을 이용한 채팅 클라이언트
-    2023. 10. 29. Sun
+    2023. 10. 29. Sun ~
 
  */
 
-// -*- coding: utf-8 -*-
-
-import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.Socket;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class ChatClient {
 
