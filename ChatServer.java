@@ -1,7 +1,7 @@
 /*
 
     Socket을 이용한 채팅 서버
-    2023. 10. 29. Sun
+    2023. 10. 29. Sun ~
 
  */
 
@@ -48,7 +48,7 @@ public class ChatServer {
 
         public ChatThread(Socket socket, List outlist) {
             this.socket = socket;
-            this.outlist = outlist; // outlist는 모든 쓰레드가 똑같은 객체를 공유하게 한다.
+            this.outlist = outlist; // 모든 쓰레드가 outlist라는 똑같은 객체를 공유하게 한다.
         }
 
         public void run() {
